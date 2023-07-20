@@ -1,0 +1,26 @@
+Ghost 50 Mk 1
+rated at 5,000 lbf (22 kN) at 10,000 rpm with a weight of 2,011 lb (912 kg)
+Ghost 50 Mk 2
+rated at 5,125 lbf (22.80 kN)
+
+
+Specifications (Ghost 105)
+Data from Aircraft engines of the World 1957.[4]
+
+General characteristics
+Type: Turbojet engine
+Length: 129 in (3,300 mm)
+Diameter: 52.7 in (1,340 mm)
+Frontal area: 15.2 sq ft (1.41 m2)
+Dry weight: 2,135 lb (968 kg)
+Components
+Compressor: Single-stage centrifugal flow
+Combustors: 10 chambers
+Turbine: Single-stage axial flow
+Fuel type: Jet fuel
+Performance
+Maximum thrust: 5,300 lbf (24 kN) at 10,350 rpm for take-off
+Overall pressure ratio: 4.6
+Turbine inlet temperature: JPT 1,400 °F; 760 °C (1,033.15 K)
+Specific fuel consumption: 1.02 lb/lbf/h (104 kg/kN/h)
+Thrust-to-weight ratio: 2.5

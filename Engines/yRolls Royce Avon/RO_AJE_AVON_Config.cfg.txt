@@ -1,0 +1,38 @@
+@PART[aje_avonmk101]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.101 Turbojet
+@MODULE[ModuleEngines*]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name=Kerosene
+		}
+	}
+}
+
+@PART[aje_avonmk141]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.141 Turbojet
+@MODULE[ModuleEngines*]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name=Kerosene
+		}
+	}
+}
+
+@PART[aje_avonmk200]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.200 Turbojet
+@MODULE[ModuleEngines*]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name=Kerosene
+		}
+	}
+}

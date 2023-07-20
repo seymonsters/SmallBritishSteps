@@ -1,0 +1,288 @@
++PART[turboJet]:NEEDS[ProceduralParts|Scale]:FOR[aaa_AJE]
+{
+	@name = aje_avonmk101
+
+	@MODEL
+	{
+		%scale = 0.72, 0.72, 0.72
+	}
+	@MODEL,1:NEEDS[VenStockRevamp]
+	{
+		@scale = 1.152, 1.25, 1.152
+	}
+	%rescaleFactor = 1.0
+	%CoMOffset = 0, 2.0, 0
+
+	@title = Avon RB-146 Mk.101 Turbojet
+	@manufacturer = Rolls-Royce
+	@description = The Rolls-Royce Avon was the first axial flow jet engine designed and produced by Rolls-Royce. Introduced in 1950. This Represents the Early Version, Military designation for the RA.3 Avon – 6,500 lbf (28.91 kN)
+	@mass = 1.3
+
+	@MODEL,0:NEEDS[VenStockRevamp]
+	{
+		@model = VenStockRevamp/Part Bin/NewParts/JetEngines/HighBypassJet
+		%position = 0, -0.996, 0
+		%scale = 0.9, 0.9, 0.9
+	}
+	@MODULE[ModuleAJEJetAnimateAfterburner]:NEEDS[VenStockRevamp]
+	{
+		@animationName = HeatAnimationEmmissiveTurbofan
+	}
+	@MODULE[ModuleAJEJetAnimateNozzleArea]:NEEDS[VenStockRevamp]
+	{
+		@animationName = ThrustAnimation
+		@useAnimCurve = False
+	}
+	@EFFECTS:NEEDS[VenStockRevamp]
+	{
+		@smoke
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@running_wet
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@power_wet
+		{
+			@MODEL_MULTI_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@flameout
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+	}
+
+	!MODULE[ModuleGimbal] {}
+
+	@MODULE[ModuleEngines*]
+	{
+		@name = ModuleEnginesAJEJet
+		@maxThrust = 28.91
+
+		Area = 0.335
+		BPR = 0
+		CPR = 8.4
+		FPR = 0
+		Mdes = 0.8
+		Tdes = 260
+		eta_c = 0.95
+		eta_t = 0.98
+		eta_n = 0.8
+		FHV = 29000000
+		TIT = 1250
+		TAB = 0
+		exhaustMixer = False
+		thrustUpperLimit = 150
+		maxT3 = 800
+
+		defaultTPR = 0.85
+		drySFC = 0.85
+		dryThrust = 28.91
+		wetThrust = 0
+	}
+}
++PART[turboJet]:NEEDS[ProceduralParts|Scale]:FOR[aaa_AJE]
+{
+	@name = aje_avonmk141
+
+	@MODEL
+	{
+		%scale = 0.72, 0.72, 0.72
+	}
+	@MODEL,1:NEEDS[VenStockRevamp]
+	{
+		@scale = 1.152, 1.25, 1.152
+	}
+	%rescaleFactor = 1.0
+	%CoMOffset = 0, 2.0, 0
+
+	@title = Avon RB-146 Mk.141 Turbojet
+	@manufacturer = Rolls-Royce
+	@description = The Rolls-Royce Avon was the first axial flow jet engine designed and produced by Rolls-Royce. Introduced in 1950. This represents the uprated verison of the previous RA3, Military designation  RA.7 Avon – 7,350 lbf (32.69 kN)
+	@mass = 1.3
+
+	@MODEL,0:NEEDS[VenStockRevamp]
+	{
+		@model = VenStockRevamp/Part Bin/NewParts/JetEngines/HighBypassJet
+		%position = 0, -0.996, 0
+		%scale = 0.9, 0.9, 0.9
+	}
+	@MODULE[ModuleAJEJetAnimateAfterburner]:NEEDS[VenStockRevamp]
+	{
+		@animationName = HeatAnimationEmmissiveTurbofan
+	}
+	@MODULE[ModuleAJEJetAnimateNozzleArea]:NEEDS[VenStockRevamp]
+	{
+		@animationName = ThrustAnimation
+		@useAnimCurve = False
+	}
+	@EFFECTS:NEEDS[VenStockRevamp]
+	{
+		@smoke
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@running_wet
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@power_wet
+		{
+			@MODEL_MULTI_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@flameout
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+	}
+
+	!MODULE[ModuleGimbal] {}
+
+	@MODULE[ModuleEngines*]
+	{
+		@name = ModuleEnginesAJEJet
+		@maxThrust = 32.69
+
+		Area = 0.335
+		BPR = 0
+		CPR = 8.4
+		FPR = 0
+		Mdes = 0.8
+		Tdes = 260
+		eta_c = 0.95
+		eta_t = 0.98
+		eta_n = 0.8
+		FHV = 29000000
+		TIT = 1250
+		TAB = 0
+		exhaustMixer = False
+		thrustUpperLimit = 150
+		maxT3 = 800
+
+		defaultTPR = 0.85
+		drySFC = 0.85
+		dryThrust = 32.69
+		wetThrust = 0
+	}
+}
++PART[turboJet]:NEEDS[ProceduralParts|Scale]:FOR[aaa_AJE]
+{
+	@name = aje_avonmk200
+
+	@MODEL
+	{
+		%scale = 0.72, 0.72, 0.72
+	}
+	@MODEL,1:NEEDS[VenStockRevamp]
+	{
+		@scale = 1.152, 1.25, 1.152
+	}
+	%rescaleFactor = 1.0
+	%CoMOffset = 0, 2.0, 0
+
+	@title = Avon RB-146 Mk.200 Turbojet
+	@manufacturer = Rolls-Royce
+	@description = The Rolls-Royce Avon was the first axial flow jet engine designed and produced by Rolls-Royce. Introduced in 1950. This represents the Mk200 series with can-annular combustion chamber and Sapphire style compressor – 9,500 lbf (42.26 kN)
+	@mass = 1.3
+
+	@MODEL,0:NEEDS[VenStockRevamp]
+	{
+		@model = VenStockRevamp/Part Bin/NewParts/JetEngines/HighBypassJet
+		%position = 0, -0.996, 0
+		%scale = 0.9, 0.9, 0.9
+	}
+	@MODULE[ModuleAJEJetAnimateAfterburner]:NEEDS[VenStockRevamp]
+	{
+		@animationName = HeatAnimationEmmissiveTurbofan
+	}
+	@MODULE[ModuleAJEJetAnimateNozzleArea]:NEEDS[VenStockRevamp]
+	{
+		@animationName = ThrustAnimation
+		@useAnimCurve = False
+	}
+	@EFFECTS:NEEDS[VenStockRevamp]
+	{
+		@smoke
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@running_wet
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@power_wet
+		{
+			@MODEL_MULTI_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+		@flameout
+		{
+			@PREFAB_PARTICLE
+			{
+				@transformName = thrustTransform
+			}
+		}
+	}
+
+	!MODULE[ModuleGimbal] {}
+
+	@MODULE[ModuleEngines*]
+	{
+		@name = ModuleEnginesAJEJet
+		@maxThrust = 42.26
+
+		Area = 0.335
+		BPR = 0
+		CPR = 8.4
+		FPR = 0
+		Mdes = 0.8
+		Tdes = 260
+		eta_c = 0.95
+		eta_t = 0.98
+		eta_n = 0.8
+		FHV = 29000000
+		TIT = 1250
+		TAB = 0
+		exhaustMixer = False
+		thrustUpperLimit = 150
+		maxT3 = 800
+
+		defaultTPR = 0.85
+		drySFC = 0.85
+		dryThrust = 42.26
+		wetThrust = 0
+	}
+}

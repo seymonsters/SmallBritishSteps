@@ -1,0 +1,34 @@
+
+@PART[aje_avonmk101]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.101 Turbojet
+	!MODEL:HAS[#model[*EngineCore-Medium]] {}
+	MODEL
+	{
+		model = RealismOverhaul/Models/EngineCore-Medium
+		scale = 1.152, 1.25, 1.152
+	}
+}
+@PART[aje_avonmk141]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.141 Turbojet
+	!MODEL:HAS[#model[*EngineCore-Medium]] {}
+	MODEL
+	{
+		model = RealismOverhaul/Models/EngineCore-Medium
+		scale = 1.152, 1.25, 1.152
+	}
+}
+@PART[aje_avonmk200]:FOR[RealismOverhaul]
+{
+	%RSSROConfig = True
+	%title = Avon RB-146 Mk.200 Turbojet
+	!MODEL:HAS[#model[*EngineCore-Medium]] {}
+	MODEL
+	{
+		model = RealismOverhaul/Models/EngineCore-Medium
+		scale = 1.152, 1.25, 1.152
+	}
+}

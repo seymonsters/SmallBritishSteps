@@ -1,0 +1,211 @@
+//  Sprite Single Chamber Series Engines
+
+
+@PART[*]:HAS[#engineType[Sprite1]]:FOR[RealismOverhaulEngines]
+{
+	%title = Sprite
+	%manufacturer = de Havilland
+	%description = de Havilland Sprite is a single chamber HTP Engine developed in the late 1940's and early 1950's.
+  
+  !MODULE[ModuleAlternator],*{}
+	!RESOURCE,*{}
+	
+	MODULE
+	{
+		name = ModuleEngineConfigs
+		type = ModuleEngines
+		origMass = 0.11
+		//techLevel = 0
+		//origTechLevel = 0
+		//maxTechLevel = 0
+		engineType = L+
+		configuration = DSpr_1
+		modded = false
+		// 
+
+MODULE
+	{
+		name = ModuleGimbal
+		gimbalTransformName = thrustTransform
+		gimbalRange = 0
+		useGimbalResponseSpeed = true
+		gimbalResponseSpeed = 16
+	}
+
+@MODULE[ModuleGimbal]
+	{
+		@gimbalRange = 0
+		%useGimbalResponseSpeed = true
+		%gimbalResponseSpeed = 16
+	}
+    
+    // Engine Configs 
+		CONFIG
+		{
+			name = DSpr_1
+			description = Initial version (1951)
+			maxThrust = 22.2 // vac calculated
+			minThrust = 22.2
+			heatProduction = 40
+			
+			PROPELLANT
+			{
+				name = HTP
+				ratio = 1
+				DrawGauge = True
+			}
+			atmosphereCurve
+			{
+				key = 0 155
+				key = 1 145
+			}
+			
+			massMult = 1
+			
+			ullage = True
+			ignitions = 1
+			pressureFed = False
+		}
+		CONFIG
+		{
+			name = DSpr_2
+			description = Silver-plated nickel-gauze catalyst, tested in Comets (1952)
+			maxThrust = 22.2
+			minThrust = 22.2
+			heatProduction = 40
+			
+			PROPELLANT
+			{
+				name = HTP
+				ratio = 1
+				DrawGauge = True
+			}
+			atmosphereCurve
+			{
+				key = 0 165
+				key = 1 155
+			}
+			
+			massMult = 1
+			
+			ullage = True
+			ignitions = 1
+			pressureFed = False
+		}
+		CONFIG
+		{
+			name = DSpr_3
+			description = Further development of DSpr.2
+			maxThrust = 22.2
+			minThrust = 22.2
+			heatProduction = 40
+			
+			PROPELLANT
+			{
+				name = HTP
+				ratio = 1
+				DrawGauge = True
+			}
+			atmosphereCurve
+			{
+				key = 0 170
+				key = 1 160
+			}
+			
+			massMult = 1
+			
+			ullage = True
+			ignitions = 1
+			pressureFed = False
+		}
+		CONFIG
+		{
+			name = DSpr_4
+			description = Super Sprite - Slightly lower thrust but 2.5X the burn time
+			maxThrust = 19
+			minThrust = 19
+			heatProduction = 40
+			PROPELLANT
+			{
+				name = HTP
+				ratio = 1
+				DrawGauge = True
+			}
+			atmosphereCurve
+			{
+				key = 0 170
+				key = 1 160
+			}
+			
+			massMult = 1
+			
+			ullage = True
+			ignitions = 1
+			pressureFed = False
+		}
+	}	
+}
+// Updated Burn times with known values
+@PART[*]:HAS[@MODULE[ModuleEngineConfigs]:HAS[@CONFIG[DSpr_1]],!MODULE[TestFlightInterop]]:BEFORE[zTestFlight]
+{
+	TESTFLIGHT
+	{
+			name = DSpr_1
+			ratedBurnTime = 16
+			ignitionReliabilityStart = 0.75
+			ignitionReliabilityEnd = 0.90
+			cycleReliabilityStart = 0.75
+			cycleReliabilityEnd = 0.90
+	
+	}
+@MODULE[ModuleEngineConfigs] { @CONFIG[DSpr_1] { %ratedBurnTime = #$/TESTFLIGHT[DSpr_1]/ratedBurnTime$ } }
+}
+
+@PART[*]:HAS[@MODULE[ModuleEngineConfigs]:HAS[@CONFIG[DSpr_2]],!MODULE[TestFlightInterop]]:BEFORE[zTestFlight]
+{
+	TESTFLIGHT
+	{
+			name = DSpr_2
+			ratedBurnTime = 16
+			ignitionReliabilityStart = 0.90
+			ignitionReliabilityEnd = 0.95
+			cycleReliabilityStart = 0.90
+			cycleReliabilityEnd = 0.99
+
+			techTransfer = DSpr_1:50
+	
+	}
+@MODULE[ModuleEngineConfigs] { @CONFIG[DSpr_2] { %ratedBurnTime = #$/TESTFLIGHT[DSpr_2]/ratedBurnTime$ } }
+}
+@PART[*]:HAS[@MODULE[ModuleEngineConfigs]:HAS[@CONFIG[DSpr_3]],!MODULE[TestFlightInterop]]:BEFORE[zTestFlight]
+{
+	TESTFLIGHT
+	{
+			name = DSpr_3
+			ratedBurnTime = 16
+			ignitionReliabilityStart = 0.99
+			ignitionReliabilityEnd = 0.999
+			cycleReliabilityStart = 0.95
+			cycleReliabilityEnd = 0.999
+			
+			techTransfer = DSpr_1,DSpr_2:50
+	
+	}
+@MODULE[ModuleEngineConfigs] { @CONFIG[DSpr_3] { %ratedBurnTime = #$/TESTFLIGHT[DSpr_3]/ratedBurnTime$ } }
+}
+@PART[*]:HAS[@MODULE[ModuleEngineConfigs]:HAS[@CONFIG[DSpr_4]],!MODULE[TestFlightInterop]]:BEFORE[zTestFlight]
+{
+	TESTFLIGHT
+	{
+			name = DSpr_4
+			ratedBurnTime = 40
+			ignitionReliabilityStart = 0.99
+			ignitionReliabilityEnd = 0.999
+			cycleReliabilityStart = 0.95
+			cycleReliabilityEnd = 0.999
+			
+			techTransfer = DSpr_1,DSpr_2,DSpr_3:50
+	
+	}
+@MODULE[ModuleEngineConfigs] { @CONFIG[DSpr_4] { %ratedBurnTime = #$/TESTFLIGHT[DSpr_4]/ratedBurnTime$ } }
+}
